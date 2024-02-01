@@ -1,0 +1,75 @@
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: white;
+    color: black;
+    text-align: center;
+    margin: 0;
+    padding-top: 50px;
+}
+
+.content {
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+}
+
+#cityName {
+    padding: 15px;
+    display: block;
+    margin: 20px auto;
+    background: #C0392B;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 60%;
+}
+
+#photographerTitle {
+    font-size: 18px; /* Font size for the photographer title */
+    color: black; /* Display photographer title in black */
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z" fill="%23f2c641"/></svg>');
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    background-size: 12px;
+    padding-right: 30px;
+    border: 1px solid #333;
+    padding: 5px;
+    margin-top: 10px;
+    font-family: 'Roboto Mono', monospace;
+    text-align: center; /* Center-align text */
+}
+
+#mainHeader {
+    font-family: 'Futura', sans-serif; /* Change to Futura font */
+    font-size: 48px; /* Increase font size */
+    font-weight: bold;
+    letter-spacing: 10px; /* Increase letter spacing for the main title */
+    margin-bottom: 10px; /* Add margin to create space between mainHeader and subHeader */
+}
+
+#subHeader {
+    font-family: 'Roboto Mono', monospace; /* Change font family */
+    text-transform: uppercase; /* All caps */
+    letter-spacing: 0.5em; /* Increase spacing */
+    font-size: 18px; /* Smaller font size */
+    margin-top: 0; /* Remove default top margin */
+    margin-bottom: 20px; /* Add margin to create space between subHeader and content */
+}
+
+.city-info {
+    border: 1px solid #ccc; /* Add a thin gray border */
+    padding: 10px; /* Add padding to the city information */
+    margin-top: 20px; /* Add margin to separate it from the content */
+}
+
+
+/* Add any additional styles you may need here */
+
