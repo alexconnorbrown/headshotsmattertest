@@ -3,173 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>City Information</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Enter Page</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Logo Image -->
-    <img src="https://raw.githubusercontent.com/alexconnorbrown/headshotsmattertest/main/headshotsMatter.jpg" alt="Headshots Matter Logo" id="logo" style="width: 100px; margin-top: 30px;">
-
-    <!-- Main Header Title -->
-    <h1 id="mainHeader">HEADSHOTS MATTER</h1>
-    <h2 id="subHeader">Photographer Templates</h2>
-
-    <div class="content">
-        <!-- Select City Dropdown -->
-        <select id="cityDropdown" onchange="showCityInfo()">
-            <option value="">Select a City (125)</option>
-            <optgroup label="Africa">
-                <option value="Johannesburg, South Africa (Robyn Davie Creative Studio)">Johannesburg, South Africa (Robyn Davie Creative Studio)</option>
-                <option value="Lagos, Nigeria (Olutobi Harry Photography)">Lagos, Nigeria (Olutobi Harry Photography)</option>
-                <option value="Harare, Zimbabwe (Tinashe Hwindingwi, The Red Pangolin Studio)">Harare, Zimbabwe (Tinashe Hwindingwi, The Red Pangolin Studio)</option>
-                <option value="Quatre Bornes, Mauritius (Didier Ma, BrandYou Headshot Studio)">Quatre Bornes, Mauritius (Didier Ma, BrandYou Headshot Studio)</option>
-            </optgroup>
-            <optgroup label="Australia">
-                <option value="Sydney, Australia (Philip Le Masurier)">Sydney, Australia (Philip Le Masurier)</option>
-                <option value="Tasmania, Australia (Gary Cumberbatch)">Tasmania, Australia (Gary Cumberbatch)</option>
-            </optgroup>
-            <optgroup label="Canada">
-                <optgroup label="West">
-                    <option value="Calgary, Alberta (Crystal Mercredi)">Calgary, Alberta (Crystal Mercredi)</option>
-                    <option value="Coquitlam + Langley / Vancouver, BC (Gordon Clark)">Coquitlam + Langley / Vancouver, BC (Gordon Clark)</option>
-                    <option value="Vancouver, BC (Ian Redd / Vancouver Headshots Inc.)">Vancouver, BC (Ian Redd / Vancouver Headshots Inc.)</option>
-                    <option value="Vancouver, BC (Peter Holst Photography)">Vancouver, BC (Peter Holst Photography)</option>
-                    <option value="Victoria, BC (Linda Mackie)">Victoria, BC (Linda Mackie)</option>
-                    <option value="Calgary, Alberta (Greg Gerla Photography)">Calgary, Alberta (Greg Gerla Photography)</option>
-                    <option value="Edmonton, Alberta (Andrei Roman / Flux Media)">Edmonton, Alberta (Andrei Roman / Flux Media)</option>
-                    <option value="Edmonton, Alberta (Nancy Critchley)">Edmonton, Alberta (Nancy Critchley)</option>
-                </optgroup>
-                <optgroup label="Central">
-                    <option value="St. Catharines / Niagara Region (Robert Nowell Photographer)">St. Catharines / Niagara Region (Robert Nowell Photographer)</option>
-                    <option value="Sudbury, Ontario (John Rumball Photography)">Sudbury, Ontario (John Rumball Photography)</option>
-                    <option value="Cambridge, Ontario (Philip Kingswood)">Cambridge, Ontario (Philip Kingswood)</option>
-                    <option value="Parry Sound, Muskoka Ontario (Peter Istvan Photography)">Parry Sound, Muskoka Ontario (Peter Istvan Photography)</option>
-                    <option value="Kingston, Ontario (Reinier deSmit / BrilliantEye)">Kingston, Ontario (Reinier deSmit / BrilliantEye)</option>
-                    <option value="Toronto, Ontario (Ramón Vasconcelos Photography)">Toronto, Ontario (Ramón Vasconcelos Photography)</option>
-                    <option value="Ottawa, Ontario (Dwayne Brown / Ottawa Headshots founder / mentor)">Ottawa, Ontario (Dwayne Brown / Ottawa Headshots founder / mentor)</option>
-                    <option value="Montreal, Quebec (Photographie mikEuclide)">Montreal, Quebec (Photographie mikEuclide)</option>
-                </optgroup>
-                <optgroup label="East">
-                    <option value="Halifax + Dartmouth, NS (Jay Fisher / Capture It Photography)">Halifax + Dartmouth, NS (Jay Fisher / Capture It Photography)</option>
-                </optgroup>
-            </optgroup>
-            <optgroup label="China">
-                <option value="Hong Kong (Analogical Photos / Huan Liu)">Hong Kong (Analogical Photos / Huan Liu)</option>
-                <option value="Hong Kong (Jennifer Chen / JC Graphy)">Hong Kong (Jennifer Chen / JC Graphy)</option>
-            </optgroup>
-            <optgroup label="United Kingdom">
-                <optgroup label="Wales">
-                    <option value="Cardiff, Wales (Simon Ridgway)">Cardiff, Wales (Simon Ridgway)</option>
-                </optgroup>
-                <optgroup label="England">
-                    <option value="Brighton + Hove, England (Jacqui McSweeney - Brighton Headshot Photography)">Brighton + Hove, England (Jacqui McSweeney - Brighton Headshot Photography)</option>
-                    <option value="Norwich / Ipswich, England (Glenn Davidson Photography)">Norwich / Ipswich, England (Glenn Davidson Photography)</option>
-                    <option value="Holmes Chapel, Cheshire UK (Martin Hobby)">Holmes Chapel, Cheshire UK (Martin Hobby)</option>
-                    <option value="South East Bermondsey - London, England (Tom Trevatt Photography (mentor))">South East Bermondsey - London, England (Tom Trevatt Photography (mentor))</option>
-                    <option value="Kings Cross - London, England (Ivan Weiss)">Kings Cross - London, England (Ivan Weiss)</option>
-                    <option value="Dalston, Hackney - London, England (Alastair Batchelor)">Dalston, Hackney - London, England (Alastair Batchelor)</option>
-                    <option value="South West Surrey - London, England (Craig Greenslade Photography)">South West Surrey - London, England (Craig Greenslade Photography)</option>
-                    <option value="Manchester, England (Mike Wojcik Photography)">Manchester, England (Mike Wojcik Photography)</option>
-                    <option value="London, UK (Virgilio Osa Photography)">London, UK (Virgilio Osa Photography)</option>
-                    <option value="Halifax, England (James Melia Studio (mentor))">Halifax, England (James Melia Studio (mentor))</option>
-                    <option value="Leeds, England (Jonny Kibble Photography)">Leeds, England (Jonny Kibble Photography)</option>
-                </optgroup>
-            </optgroup>
-            <!-- Add more regions and cities as needed -->
-
-<optgroup label="Europe">
-    <option value="Åarhus, Denmark (Kirsten Adler Fotograf)">Åarhus, Denmark (Kirsten Adler Fotograf)</option>
-    <option value="Lisboa, Portugal (Afonso Azevedo Neves)">Lisboa, Portugal (Afonso Azevedo Neves)</option>
-    <option value="Paris, France (Quentin Houdas)">Paris, France (Quentin Houdas)</option>
-    <option value="Brussels, Belgium + Luxembourg (Emmanuel Fradin Corporate Photography)">Brussels, Belgium + Luxembourg (Emmanuel Fradin Corporate Photography)</option>
-    <option value="Willebroek / Antwerp, Belgium (Kwinten Verspeurt)">Willebroek / Antwerp, Belgium (Kwinten Verspeurt)</option>
-    <option value="Stockholm, Sweden (Sean Lewthwaite Photography (mentor))">Stockholm, Sweden (Sean Lewthwaite Photography (mentor))</option>
-    <option value="Stockholm, Sweden (The Headshots Lab / Wouter Veenstra)">Stockholm, Sweden (The Headshots Lab / Wouter Veenstra)</option>
-    <option value="Utrecht, Netherlands (Justin Zuure)">Utrecht, Netherlands (Justin Zuure)</option>
-    <option value="Barcelona, Spain (Virgilio Osa Photography)">Barcelona, Spain (Virgilio Osa Photography)</option>
-    <option value="Madrid, Spain (Aaron Jean Photography)">Madrid, Spain (Aaron Jean Photography)</option>
-    <option value="Madrid, Spain (Laura G. Guardiola)">Madrid, Spain (Laura G. Guardiola)</option>
-    <option value="Moscow, Russia (Aleksandr Balakin)">Moscow, Russia (Aleksandr Balakin)</option>
-    <option value="Istanbul, Turkey (Gul Deris Bayram, Happy Portraits)">Istanbul, Turkey (Gul Deris Bayram, Happy Portraits)</option>
-    <option value="Odesa, Ukraine (Dmitro Baev / BAEVFOTO)">Odesa, Ukraine (Dmitro Baev / BAEVFOTO)</option>
-</optgroup>
-
-<optgroup label="Germany">
-    <option value="Haßfurt, Germany (Rainer Müller Fotografie)">Haßfurt, Germany (Rainer Müller Fotografie)</option>
-    <option value="Frankfurt, Germany (Michael Kleinespel)">Frankfurt, Germany (Michael Kleinespel)</option>
-    <option value="Berlin, Germany (Falk Weiss, Bewerbungsfotos-Friedrichshain)">Berlin, Germany (Falk Weiss, Bewerbungsfotos-Friedrichshain)</option>
-</optgroup>
-
-<optgroup label="Japan">
-    <option value="Tokyo, Japan (Anthony Wood)">Tokyo, Japan (Anthony Wood)</option>
-</optgroup>
-
-<optgroup label="United States">
-    <optgroup label="East">
-        <option value="West Chester, Pennsylvania (Roman Coia)">West Chester, Pennsylvania (Roman Coia)</option>
-        <option value="Montpelier, Vermont (Paul Richardson / StoryWorkz)">Montpelier, Vermont (Paul Richardson / StoryWorkz)</option>
-        <option value="Portland, Maine (Will Wohler)">Portland, Maine (Will Wohler)</option>
-        <option value="Brooklyn, New York (Mod Schwalbe)">Brooklyn, New York (Mod Schwalbe)</option>
-        <option value="Hartford, Connecticut (Connecticut Headshots)">Hartford, Connecticut (Connecticut Headshots)</option>
-        <option value="Stamford, Connecticut (Beth Madison Headshots)">Stamford, Connecticut (Beth Madison Headshots)</option>
-        <option value="Harlem, New York City (Lindi Gordon)">Harlem, New York City (Lindi Gordon)</option>
-        <option value="Radnor + Philadelphia, Pennsylvania (First Impression Headshots / Adam Levinson)">Radnor + Philadelphia, Pennsylvania (First Impression Headshots / Adam Levinson)</option>
-        <option value="Cincinnati, Ohio (Mark Denney Headshot Photography)">Cincinnati, Ohio (Mark Denney Headshot Photography)</option>
-        <option value="Burlington, Vermont (William Wilder Photography)">Burlington, Vermont (William Wilder Photography)</option>
-    </optgroup>
-    <optgroup label="Southern">
-        <option value="Boca Raton, Florida (Annett Meyer Photography)">Boca Raton, Florida (Annett Meyer Photography)</option>
-        <option value="Fort Myers, Florida (Earl Gardner / ADM Photo & Video)">Fort Myers, Florida (Earl Gardner / ADM Photo & Video)</option>
-        <option value="Altamonte Springs, Florida (Karen K Photo)">Altamonte Springs, Florida (Karen K Photo)</option>
-        <option value="Miami, Florida (Leslie Gabaldon)">Miami, Florida (Leslie Gabaldon)</option>
-        <option value="Miami, Florida (Kai Skye Photography)">Miami, Florida (Kai Skye Photography)</option>
-        <option value="Orlando, Florida (Keishla Almodovar | Signature Headshots)">Orlando, Florida (Keishla Almodovar | Signature Headshots)</option>
-        <option value="Jacksonville, Florida (Joseph Anzalone)">Jacksonville, Florida (Joseph Anzalone)</option>
-        <option value="Greenville, South Carolina (Escobar Photography)">Greenville, South Carolina (Escobar Photography)</option>
-        <option value="Spartanburg, South Carolina (JG Photo Studios / Joshua Gaffney)">Spartanburg, South Carolina (JG Photo Studios / Joshua Gaffney)</option>
-        <option value="Washington, DC (Sam Headshots)">Washington, DC (Sam Headshots)</option>
-        <option value="Baltimore, Maryland (Vickie Gray Images)">Baltimore, Maryland (Vickie Gray Images)</option>
-        <option value="Kennesaw, Cobb County GA (Camille Wright Felton)">Kennesaw, Cobb County GA (Camille Wright Felton)</option>
-        <option value="Johns Creek - Atlanta, Georgia (Bartee Lamar)">Johns Creek - Atlanta, Georgia (Bartee Lamar)</option>
-        <option value="Louisville, Kentucky (Dennis Bonifer / BONIFOTO)">Louisville, Kentucky (Dennis Bonifer / BONIFOTO)</option>
-        <option value="Oklahoma City, Oklahoma (Charlie Neuenschwander)">Oklahoma City, Oklahoma (Charlie Neuenschwander)</option>
-        <option value="Oklahoma City, Oklahoma (David Bricquet)">Oklahoma City, Oklahoma (David Bricquet)</option>
-        <option value="Tulsa, Oklahoma (Headshots Tulsa by Christopher Bryan)">Tulsa, Oklahoma (Headshots Tulsa by Christopher Bryan)</option>
-        <option value="Dallas, Texas (Jordan Fraker Photography)">Dallas, Texas (Jordan Fraker Photography)</option>
-        <option value="Houston, Texas (Colt Melrose Photography)">Houston, Texas (Colt Melrose Photography)</option>
-    </optgroup>
-    <optgroup label="West">
-        <option value="Salinas, California (Juan Avila)">Salinas, California (Juan Avila)</option>
-        <option value="Roseville and Sacramento, CA (Sactown Headshots)">Roseville and Sacramento, CA (Sactown Headshots)</option>
-        <option value="Boise, Idaho (Lisa Marie Pane Photography)">Boise, Idaho (Lisa Marie Pane Photography)</option>
-        <option value="Portland, Oregon (DJ Bornemeier / Executive Lens)">Portland, Oregon (DJ Bornemeier / Executive Lens)</option>
-        <option value="Orange County, California (Kenny Goldberg)">Orange County, California (Kenny Goldberg)</option>
-        <option value="Windsor + Fort Collins, Colorado (Diggles Photography)">Windsor + Fort Collins, Colorado (Diggles Photography)</option>
-        <option value="Salt Lake City (Nick Roush Photography)">Salt Lake City (Nick Roush Photography)</option>
-    </optgroup>
-    <optgroup label="Midwest">
-        <option value="St. Louis, Missouri (Randall Kahn)">St. Louis, Missouri (Randall Kahn)</option>
-        <option value="Chicago, Illinois (Doug McGoldrick / DougPhoto.com)">Chicago, Illinois (Doug McGoldrick / DougPhoto.com)</option>
-        <option value="Milwaukee, Wisconsin (Paul Hanon / Premier Headshots)">Milwaukee, Wisconsin (Paul Hanon / Premier Headshots)</option>
-        <option value="Richmond and Roanoke, Virginia (Franklin Knox)">Richmond and Roanoke, Virginia (Franklin Knox)</option>
-        <option value="Overland Park, Kansas City (Brian Gayley)">Overland Park, Kansas City (Brian Gayley)</option>
-    </optgroup>
-</optgroup>
-        </select>
-        
-        <!-- City and Photographer Titles -->
-        <h1 id="cityName">City Name</h1>
-        <h2 id="photographerTitle">Photographer</h2>
+    <div id="overlay"></div> <!-- Used for dimming -->
+    <div class="centered" id="content">
+        <div class="square"></div>
+        <div class="button-container">
+            <button class="enter-button" onclick="showWhiteBox()">Associate Members</button>
+            <button class="enter-button" onclick="showWhiteBox()">Creative Members</button>
+        </div>
     </div>
-
-    <!-- City Information Display -->
-    <div class="city-info" id="cityInfo">
-        <!-- Placeholder for Globe Image -->
-        <img src="placeholder-globe-url" alt="Globe Map" id="globeImage" style="width: 100px; height: 100px;">
-        <!-- City information will be displayed here -->
+    <!-- White box that appears in the center -->
+    <div id="white-box" class="hidden">
+        <p>Content goes here...</p>
+        <button onclick="hideWhiteBox()">Close</button>
     </div>
-
-    <!-- Link to JavaScript File -->
     <script src="script.js"></script>
 </body>
 </html>
