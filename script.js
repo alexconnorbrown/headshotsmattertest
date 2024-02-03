@@ -20,7 +20,6 @@ function showWhiteBox(clickedButton) {
     setTimeout(() => {
         document.getElementById('overlay').style.opacity = 1;
         document.getElementById('content').classList.add('blur-effect');
-        document.querySelector('.square').classList.add('dim-effect');
         document.querySelectorAll('.enter-button').forEach(button => {
             if (button !== clickedButton) {
                 button.classList.add('inactive'); // Make all buttons inactive except the clicked one
@@ -38,9 +37,9 @@ function hideWhiteBox() {
         document.getElementById('overlay').style.display = 'none';
         document.getElementById('white-box').style.display = 'none';
         document.getElementById('content').classList.remove('blur-effect');
-        document.querySelector('.square').classList.remove('dim-effect');
         document.querySelectorAll('.enter-button').forEach(button => {
             button.classList.remove('clicked', 'inactive', 'dim-effect-button'); // Reactivate and undim all buttons
         });
     }, 500); // Synchronize disappearance and focus effects
 }
+
