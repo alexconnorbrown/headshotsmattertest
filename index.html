@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="background-cities"></div> <!-- New div for background cities -->
+    <div class="city-names"></div>
     <div id="overlay"></div> <!-- Used for dimming -->
     <div class="centered" id="content">
-        <div class="image-container">
-            <img src="headshotsMatter_favicon-3.png" alt="Bobbing Image" class="bobbing-image">
-        </div>
+        <img src="headshotsMatter_favicon-3.png" alt="Flavicon" class="square" id="imageToDim">
         <div class="button-container">
-            <button class="enter-button" onclick="showWhiteBox()">Associate Members</button>
-            <button class="enter-button" onclick="showWhiteBox()">Creative Members</button>
+            <button class="enter-button" onclick="dimImage()">Associate Members</button>
+            <button class="enter-button" onclick="dimImage()">Creative Members</button>
         </div>
     </div>
     <!-- White box that appears in the center -->
