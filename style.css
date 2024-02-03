@@ -40,18 +40,41 @@ body {
     display: flex;
 }
 
-.image-container {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 30px;
-    animation: bobbing 5s infinite ease-in-out;
+#content.blur-effect, .square {
     transition: filter 0.5s ease, opacity 0.5s ease, background-color 0.5s ease; /* Add background-color transition */
 }
 
-.bobbing-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+#content.blur-effect {
+    filter: blur(5px);
+    transition: filter 0.5s
+}
+
+#white-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    box-sizing: border-box;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 3;
+    transition: display 0s 0.5s, opacity 0.5s ease;
+}
+
+.square {
+    width: 200px;
+    height: 200px;
+    background-color: transparent; /* Normal red background for square */
+    margin-bottom: 30px;
+    animation: bobbing 3s infinite ease-in-out, focus-in 2s ;
+    
 }
 
 @keyframes bobbing {
@@ -63,45 +86,110 @@ body {
     }
 }
 
+@keyframes focus-in {
+    0% {
+        filter: blur(5px);
+        opacity: 0;
+    }
+    100% {
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+@keyframes white-out {
+    0% {
+        filter: brightness(0); /* Initially fully transparent (black filter) */
+    }
+    100% {
+        filter: brightness(1); /* Fully visible (white filter removed) */
+    }
+
+}   
+
+@keyframes move-in {
+    0% {
+        transform: translateY(30px); /* Start from a slightly lower position */
+        opacity: 0; /* Start with opacity set to 0 */
+        filter: blur(5px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* Move to the final position */
+        opacity: 1; /* Become fully visible */
+        filter: blur(0);
+        opacity: 1;
+    }
+    
+}
+
 .enter-button {
-    border: 2px solid #7b0000; /* Slightly darker red border */
+    border: 2px solid red;
     background-color: transparent;
-    color: #7b0000; /* Slightly darker red text */
+    color: red;
     padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
     margin: 10px;
-    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+    transition: filter 0.5s ease, opacity 0.5s ease; /* Add transition for both filter and opacity */
+    animation: move-in 2s 2s forwards; /* Add a 3-second delay and set fill mode to forwards */
+    opacity: 0; /* Initial state before the animation */
 }
 
 .enter-button:hover {
-    background-color: #7b0000; /* Slightly darker red on hover for unchecked buttons */
+    background-color: red; /* Fill with normal red on hover for unchecked buttons */
     color: white;
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .enter-button.clicked {
-    background-color: #550000; /* Slightly darker red when clicked */
-    border-color: #550000; /* Ensure border also matches the clicked color */
+    background-color: #a60000 ; /* Dimmed red when clicked */
+    border-color: #930000; /* Ensure border also matches the clicked color */
     color: #ddd; /* Dimmed text to match background dimming */
+    opacity: 1;
 }
 
-/* Add transition for unchecked button elements when clicked */
-.enter-button:not(.clicked) {
-    transition: background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease;
+
+/* Add a new CSS class for the dimming effect */
+.dim-effect {
+    filter: blur(5px) brightness(0.5); /* Combine blur and brightness filters */
+    opacity: 1.0; /* Adjusted to a valid opacity value, change as needed */
+    transition: filter 0.5s ease, opacity 0.5s ease, color 0.5s ease; /* Add transition for both filter and opacity */
 }
 
-/* Adjust the image appearance when a button is clicked */
-.enter-button.clicked + .image-container {
-    filter: brightness(0.7); /* Dim the image when a button is clicked */
-    transition: filter 0.5s ease; /* Add filter transition */
+/* Ensure that existing CSS styles are retained */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
 }
 
-/* Adjust the unchecked button's background when a button is clicked */
-.enter-button.clicked ~ .enter-button {
-    background-color: transparent; /* Transparent background for unchecked buttons when a button is clicked */
-    border-color: #550000; /* Ensure border also matches the clicked color */
-    color: #550000; /* Slightly darker text to match background dimming */
+body {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
 }
 
+#background-cities {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.city-name {
+    position: absolute;
+    color: #ffffff; /* Text color for city names */
+    /* Additional styling for city names (e.g., font-size, font-weight) */
+}
+
+/* Other CSS rules for styling and animations */
