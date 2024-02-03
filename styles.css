@@ -1,75 +1,129 @@
-body {
-    font-family: 'Roboto Mono', monospace;
-    background-color: white;
-    color: black;
-    text-align: center;
+body, html {
     margin: 0;
-    padding-top: 50px;
+    padding: 0;
+    height: 100%;
+    width: 100%;
 }
 
-.content {
-    text-align: center;
-    display: block;
-    margin-top: 20px;
-}
-
-#cityName {
-    padding: 15px;
-    display: block;
-    margin: 20px auto;
-    background: #C0392B;
-    color: white;
-    font-weight: bold;
-    font-size: 24px;
-    white-space: nowrap;
+body {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
     overflow: hidden;
-    width: 60%;
 }
 
-#photographerTitle {
-    font-size: 18px; /* Font size for the photographer title */
-    color: black; /* Display photographer title in black */
+#overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
-select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z" fill="%23f2c641"/></svg>');
-    background-position: right 10px center;
-    background-repeat: no-repeat;
-    background-size: 12px;
-    padding-right: 30px;
-    border: 1px solid #333;
-    padding: 5px;
-    margin-top: 10px;
-    font-family: 'Roboto Mono', monospace;
-    text-align: center; /* Center-align text */
+.centered {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#mainHeader {
-    font-family: 'Futura', sans-serif; /* Change to Futura font */
-    font-size: 48px; /* Increase font size */
+.button-container {
+    display: flex;
+}
+
+#content.blur-effect, .square {
+    transition: filter 0.5s ease, opacity 0.5s ease, background-color 0.5s ease; /* Add background-color transition */
+}
+
+#content.blur-effect {
+    filter: blur(5px);
+}
+
+#white-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    box-sizing: border-box;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 3;
+    transition: display 0s 0.5s, opacity 0.5s ease;
+}
+
+.square {
+    width: 200px;
+    height: 200px;
+    background-color: red; /* Normal red background for square */
+    margin-bottom: 30px;
+    animation: bobbing 5s infinite ease-in-out;
+    transition: background-color 0.5s ease; /* Add background-color transition */
+}
+
+@keyframes bobbing {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.enter-button {
+    border: 2px solid red;
+    background-color: transparent;
+    color: red;
+    padding: 10px 20px;
+    font-size: 16px;
     font-weight: bold;
-    letter-spacing: 10px; /* Increase letter spacing for the main title */
-    margin-bottom: 10px; /* Add margin to create space between mainHeader and subHeader */
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
 }
 
-#subHeader {
-    font-family: 'Roboto Mono', monospace; /* Change font family */
-    text-transform: uppercase; /* All caps */
-    letter-spacing: 0.5em; /* Increase spacing */
-    font-size: 18px; /* Smaller font size */
-    margin-top: 0; /* Remove default top margin */
-    margin-bottom: 20px; /* Add margin to create space between subHeader and content */
+.enter-button:hover {
+    background-color: red; /* Fill with normal red on hover for unchecked buttons */
+    color: white;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-.city-info {
-    border: 1px solid #ccc; /* Add a thin gray border */
-    padding: 10px; /* Add padding to the city information */
-    margin-top: 20px; /* Add margin to separate it from the content */
+.enter-button.clicked {
+    background-color: #7b0000; /* Dimmed red when clicked */
+    border-color: #7b0000; /* Ensure border also matches the clicked color */
+    color: #ddd; /* Dimmed text to match background dimming */
 }
 
+/* Add transition for unchecked button elements when clicked */
+.enter-button:not(.clicked) {
+    transition: background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease;
+}
 
-/* Add any additional styles you may need here */
+/* Adjust the square appearance when a button is clicked */
+.enter-button.clicked + .square {
+    background-color: #7b0000; /* Dimmed red for the square when a button is clicked */
+    transition: background-color 0.5s ease; /* Add background-color transition */
+}
+
+/* Adjust the unchecked button's background when a button is clicked */
+.enter-button.clicked ~ .enter-button {
+    background-color: transparent; /* Transparent background for unchecked buttons when a button is clicked */
+    border-color: #7b0000; /* Ensure border also matches the clicked color */
+    color: #7b0000; /* Dimmed text to match background dimming */
+}
 
