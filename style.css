@@ -40,40 +40,18 @@ body {
     display: flex;
 }
 
-#content.blur-effect, .square {
+.image-container {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 30px;
+    animation: bobbing 5s infinite ease-in-out;
     transition: filter 0.5s ease, opacity 0.5s ease, background-color 0.5s ease; /* Add background-color transition */
 }
 
-#content.blur-effect {
-    filter: blur(5px);
-}
-
-#white-box {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    height: 200px;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    box-sizing: border-box;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    z-index: 3;
-    transition: display 0s 0.5s, opacity 0.5s ease;
-}
-
-.square {
-    width: 200px;
-    height: 200px;
-    background-color: red; /* Normal red background for square */
-    margin-bottom: 30px;
-    animation: bobbing 5s infinite ease-in-out;
-    transition: background-color 0.5s ease; /* Add background-color transition */
+.bobbing-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 @keyframes bobbing {
@@ -86,9 +64,9 @@ body {
 }
 
 .enter-button {
-    border: 2px solid red;
+    border: 2px solid #7b0000; /* Slightly darker red border */
     background-color: transparent;
-    color: red;
+    color: #7b0000; /* Slightly darker red text */
     padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
@@ -98,14 +76,14 @@ body {
 }
 
 .enter-button:hover {
-    background-color: red; /* Fill with normal red on hover for unchecked buttons */
+    background-color: #7b0000; /* Slightly darker red on hover for unchecked buttons */
     color: white;
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .enter-button.clicked {
-    background-color: #7b0000; /* Dimmed red when clicked */
-    border-color: #7b0000; /* Ensure border also matches the clicked color */
+    background-color: #550000; /* Slightly darker red when clicked */
+    border-color: #550000; /* Ensure border also matches the clicked color */
     color: #ddd; /* Dimmed text to match background dimming */
 }
 
@@ -114,16 +92,16 @@ body {
     transition: background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease;
 }
 
-/* Adjust the square appearance when a button is clicked */
-.enter-button.clicked + .square {
-    background-color: #7b0000; /* Dimmed red for the square when a button is clicked */
-    transition: background-color 0.5s ease; /* Add background-color transition */
+/* Adjust the image appearance when a button is clicked */
+.enter-button.clicked + .image-container {
+    filter: brightness(0.7); /* Dim the image when a button is clicked */
+    transition: filter 0.5s ease; /* Add filter transition */
 }
 
 /* Adjust the unchecked button's background when a button is clicked */
 .enter-button.clicked ~ .enter-button {
     background-color: transparent; /* Transparent background for unchecked buttons when a button is clicked */
-    border-color: #7b0000; /* Ensure border also matches the clicked color */
-    color: #7b0000; /* Dimmed text to match background dimming */
+    border-color: #550000; /* Ensure border also matches the clicked color */
+    color: #550000; /* Slightly darker text to match background dimming */
 }
 
